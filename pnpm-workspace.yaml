@@ -1,7 +1,9 @@
+# pnpm-workspace.yaml
 minimumReleaseAgeExcludePrune: true
-trustPolicy: no-downgrade
+# eslint-disable-next-line pnpm/yaml-enforce-settings
+trustPolicy: off
 shellEmulator: true
 
 allowBuilds:
   esbuild: true
-  unrs-resolver: set this to true or false
+  unrs-resolver: true
