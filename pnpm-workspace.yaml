@@ -1,2 +1,7 @@
+minimumReleaseAgeExcludePrune: true
+trustPolicy: no-downgrade
+shellEmulator: true
+
 allowBuilds:
   esbuild: true
+  unrs-resolver: set this to true or false
