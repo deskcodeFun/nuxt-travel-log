@@ -1,11 +1,9 @@
-<!-- <template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
-</template> -->
+<!-- .app/app.vue -->
 <template>
   <h1 class="text-3xl text-green-800 font-bold underline">
     Hello tailwindcss
   </h1>
+  <button class="btn btn-secondary">
+    Secondary
+  </button>
 </template>
