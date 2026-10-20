@@ -1,5 +1,6 @@
 // @ts-check
 import antfu from "@antfu/eslint-config";
+import eslintPluginTailwindcss from "eslint-plugin-tailwindcss";
 
 import withNuxt from "./.nuxt/eslint.config.mjs";
 
@@ -42,5 +43,24 @@ export default withNuxt(
       "dist/**",
       "node_modules/**",
     ],
+  },
+  // eslint tailwindcss
+  eslintPluginTailwindcss.configs["flat/recommended"],
+  {
+    plugins: {
+      tailwindcss: eslintPluginTailwindcss,
+    },
+    settings: {
+      tailwindcss: {
+        // 2. Point this to your main CSS file that imports Tailwind (Required for v4)
+        cssConfigPath: "./app/assets/css/main.css",
+        callees: ["cn", "cva", "clsx"],
+        whitelist: ["btn", "btn\\-.*"],
+      },
+    },
+    rules: {
+      "tailwindcss/classnames-order": "warn",
+      "tailwindcss/no-contradicting-classname": "error",
+    },
   },
 );
