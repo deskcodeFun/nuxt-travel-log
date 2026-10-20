@@ -35,4 +35,12 @@ export default withNuxt(
     },
   }),
   // Your custom configs here
+  // Global ignores must be in a standalone object at the end of the array
+  {
+    ignores: [
+      ".nuxt/**",
+      "dist/**",
+      "node_modules/**",
+    ],
+  },
 );
