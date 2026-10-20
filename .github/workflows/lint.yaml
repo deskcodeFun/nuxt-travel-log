@@ -1,0 +1,34 @@
+name: Lint
+
+on:
+  pull_request:
+    # Sequence of patterns matched against refs/heads
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. check out the project code
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+      # - uses: actions/checkout@v6
+      # 2. install pnpm first (Importent: Must go before setup-node, pnpm/action-setup@v4)
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          # specify pnpm version
+          version: 11
+      # 3. setup node.js and configure caching for pnpm
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24.x
+          # cache: 'pnpm'
+      - name: Install Dependencies
+        run: pnpm install
+      - name: Check linter
+        run: pnpm lint
