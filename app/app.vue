@@ -4,6 +4,6 @@
     Hello tailwindcss
   </h1>
   <button class="btn btn-secondary">
-    Secondary
+    View Map <Icon name="tabler:map" size="24px" />
   </button>
 </template>
