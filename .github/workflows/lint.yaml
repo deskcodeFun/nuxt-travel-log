@@ -12,10 +12,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
-      - name: Install pnpm and Node
+      # 1. check out the project code
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+      # - uses: actions/checkout@v6
+      # 2. install pnpm first (Importent: Must go before setup-node, pnpm/action-setup@v4)
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          # specify pnpm version
+          version: 10
+      # 3. setup node.js and configure caching for pnpm
+      - name: Setup Node
         uses: actions/setup-node@v7
         with:
           node-version: 24.x
-      - run: pnpm install
-      - run: pnpm lint
+          # cache: 'pnpm'
+      - name: Install Dependencies
+        run: pnpm install
+      - name: Check linter
+        run: pnpm lint
