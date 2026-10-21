@@ -26,7 +26,6 @@
     "@iconify-json/tabler": "^1.2.42",
     "daisyui": "^5.7.50",
     "eslint": "^10.13.0",
-    "eslint-plugin-tailwindcss": "^4.4.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0"
   },
