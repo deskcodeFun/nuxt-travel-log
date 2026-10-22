@@ -6,7 +6,7 @@ import ThemeToggle from "./ThemeToggle.vue";
 <template>
   <div class="navbar bg-primary ">
     <div class="navbar-start">
-      <NuxtLink to="/" class="btn btn-ghost text-xl text-white">
+      <NuxtLink to="/" class="btn btn-ghost text-xl">
         Travel Log
       </NuxtLink>
     </div>
