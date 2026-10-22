@@ -11,7 +11,7 @@
         </p>
         <button class="btn btn-accent">
           Sign in
-          <Icon name="tabler:brand-github" size="20" />
+          <Icon name="tabler:brand-github" size="24" />
         </button>
       </div>
     </div>
