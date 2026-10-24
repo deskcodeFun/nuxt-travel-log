@@ -7,8 +7,7 @@ export default withNuxt(
   antfu({
     type: "app",
     vue: true,
-    // typescript: true,
-    typescript: { tsconfigPath: "tsconfig.json" },
+    typescript: true,
     formatters: true,
     stylistic: {
       indent: 2,
@@ -45,6 +44,7 @@ export default withNuxt(
       ".nuxt/**",
       "dist/**",
       "node_modules/**",
+      "drizzle.config.ts",
     ],
   },
   // eslint tailwindcss
