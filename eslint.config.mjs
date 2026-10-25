@@ -45,6 +45,8 @@ export default withNuxt(
       "dist/**",
       "node_modules/**",
       "drizzle.config.ts",
+      ".pnpm-store/**",
+      "**/migrations/*",
     ],
   },
   // eslint tailwindcss
