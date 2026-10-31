@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 import "./app/utils/env";
 
 export default defineNuxtConfig({
-  modules: ["@nuxt/eslint", "@nuxt/icon", "@nuxtjs/color-mode"],
+  modules: ["@nuxt/eslint", "@nuxt/icon", "@nuxtjs/color-mode", "@pinia/nuxt"],
   eslint: {
     config: {
       standalone: false, // prevents conflict with @antfu/eslint-config
