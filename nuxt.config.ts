@@ -10,7 +10,7 @@ export default defineNuxtConfig({
       standalone: false, // prevent conflict with @antfu/eslint-config
     },
   },
-  css: ["@/assets/css/main.css"],
+  css: ["~/assets/css/main.css"],
   vite: {
     plugins: [
       tailwindcss(),
