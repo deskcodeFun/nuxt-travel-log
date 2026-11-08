@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^10.0.0",
+    "daisyui": "^5.7.50",
     "eslint": "^10.14.0",
     "eslint-plugin-format": "^2.0.1",
     "husky": "^9.1.7",
