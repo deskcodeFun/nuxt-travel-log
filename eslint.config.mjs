@@ -8,9 +8,7 @@ import withNuxt from "./.nuxt/eslint.config.mjs";
 export default withNuxt(antfu({
   type: "app",
   vue: true,
-  typescript: {
-    tsconfigPath: "tsconfig.json",
-  },
+  typescript: true,
   formatters: true,
   stylistic: {
     indent: 2,
