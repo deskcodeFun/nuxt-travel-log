@@ -8,6 +8,13 @@
       "when": 1794202159254,
       "tag": "0000_glossy_the_hunter",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1794274201032,
+      "tag": "0001_material_cannonball",
+      "breakpoints": true
     }
   ]
 }
