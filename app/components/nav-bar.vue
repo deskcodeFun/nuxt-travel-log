@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AuthButton from "./auth-button.vue";
 import ThemeToggle from "./theme-toggle.vue";
 </script>
 
@@ -12,12 +13,7 @@ import ThemeToggle from "./theme-toggle.vue";
     </div>
     <div class="navbar-end">
       <ThemeToggle />
-      <a
-        class="btn btn-accent"
-      >
-        Sign In
-        <Icon name="tabler:brand-github" size="20" />
-      </a>
+      <AuthButton />
     </div>
   </div>
 </template>
