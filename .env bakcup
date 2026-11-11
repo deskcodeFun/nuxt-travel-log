@@ -1,0 +1,12 @@
+NODE_ENV=development
+TURSO_DATABASE_URL= http://127.0.0.1:8080
+TURSO_AUTH_TOKEN=
+BETTER_AUTH_URL=http://localhost:3000 # Base URL of your app
+BETTER_AUTH_SECRET=SqWwMTMl4OubYiMx4HsE5QkhY4eS4WqK
+# github id and sescret for local host
+#GITHUB_CLIENT_ID=Ov23limIVFjCDjTT88Zm
+#GITHUB_CLIENT_SECRET=3e7fab7fcf24dc65d18c80bbee5768d24c5c022c
+
+# github id and secret for product Vercel 
+GITHUB_CLIENT_ID=Ov23lizdYF0DqYPiJ9d4
+GITHUB_CLIENT_SECRET=5f805b2cec26404eaa5418045741784456e5998e

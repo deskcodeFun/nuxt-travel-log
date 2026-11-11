@@ -48,6 +48,43 @@ CREATE TABLE `verification` (
 	`updated_at` integer
 );
 --> statement-breakpoint
-ALTER TABLE `locaiton` ADD `user_id` integer NOT NULL REFERENCES user(id);--> statement-breakpoint
-ALTER TABLE `locationLog` ADD `user_id` integer NOT NULL REFERENCES user(id);--> statement-breakpoint
-ALTER TABLE `locationLogImage` ADD `user_id` integer NOT NULL REFERENCES user(id);
+CREATE TABLE `locaiton` (
+	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	`name` text NOT NULL,
+	`slug` text NOT NULL,
+	`description` text,
+	`lat` real NOT NULL,
+	`long` real NOT NULL,
+	`user_id` integer NOT NULL,
+	`create_at` integer NOT NULL,
+	`update_at` integer NOT NULL,
+	FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON UPDATE no action ON DELETE no action
+);
+--> statement-breakpoint
+CREATE UNIQUE INDEX `locaiton_slug_unique` ON `locaiton` (`slug`);--> statement-breakpoint
+CREATE TABLE `locationLog` (
+	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	`name` text NOT NULL,
+	`description` text,
+	`started_at` integer NOT NULL,
+	`end_at` integer NOT NULL,
+	`lat` real NOT NULL,
+	`long` real NOT NULL,
+	`user_id` integer NOT NULL,
+	`location_id` integer NOT NULL,
+	`create_at` integer NOT NULL,
+	`update_at` integer NOT NULL,
+	FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON UPDATE no action ON DELETE no action,
+	FOREIGN KEY (`location_id`) REFERENCES `locaiton`(`id`) ON UPDATE no action ON DELETE no action
+);
+--> statement-breakpoint
+CREATE TABLE `locationLogImage` (
+	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	`key` text NOT NULL,
+	`user_id` integer NOT NULL,
+	`location_id` integer NOT NULL,
+	`create_at` integer NOT NULL,
+	`update_at` integer NOT NULL,
+	FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON UPDATE no action ON DELETE no action,
+	FOREIGN KEY (`location_id`) REFERENCES `locationLog`(`id`) ON UPDATE no action ON DELETE no action
+);
