@@ -6,7 +6,26 @@ const authStore = useAuthStore();
 </script>
 
 <template>
+  <div v-if="!authStore.loading && authStore.user" class="dropdown dropdown-end">
+    <div
+      tabindex="0"
+      role="button"
+      class="btn m-1"
+    >
+      <div v-if="authStore.user.image" class="avatar">
+        <div class="w-8 rounded-full">
+          <img :src="authStore.user.image" :alt="authStore.user.name">
+        </div>
+      </div>
+      <span>{{ authStore.user?.name }}</span>
+      <Icon name="tabler:chevron-down" size="24" />
+    </div>
+    <ul class="menu dropdown-content bg-base-200 rounded-box z-1 w-52 p-2 shadow-sm">
+      <li><a>Sign Out</a></li>
+    </ul>
+  </div>
   <button
+    v-else
     :disabled="authStore.loading"
     class="btn btn-accent"
     @click="authStore.signIn"
