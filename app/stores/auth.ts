@@ -1,5 +1,6 @@
 // ./app/stores/auth.ts
 import { createAuthClient } from "better-auth/vue";
+import { createAuthClient } from "better-auth/client";
 
 const authClient = createAuthClient();
 
@@ -9,6 +10,9 @@ export const useAuthStore = defineStore("useAuthStore", () => {
   const loading = computed(() => session.value.isPending || session.value.isRefetching);
 
   async function signIn() {
+  const loading = ref(false);
+  async function signIn() {
+    loading.value = true;
     await authClient.signIn.social({
       provider: "github",
       callbackURL: "/dashboard",
@@ -19,6 +23,7 @@ export const useAuthStore = defineStore("useAuthStore", () => {
   async function signOut() {
     await authClient.signOut();
     navigateTo("/");
+    loading.value = false;
   }
 
   return {
