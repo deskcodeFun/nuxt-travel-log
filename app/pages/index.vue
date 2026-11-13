@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import AuthButton from "~/components/auth-button.vue";
+
+const authStore = useAuthStore();
 </script>
 
 <!-- .app/pages/index.vue -->
@@ -13,7 +15,14 @@ import AuthButton from "~/components/auth-button.vue";
         <p class="py-6">
           Keep track of your travels and adventuires. Add location, photos, and notes to create a digital journal of your journeyus.
         </p>
-        <AuthButton />
+        <AuthButton v-if="!authStore.user" />
+        <NuxtLink
+          v-else
+          to="/dashboard"
+          class="btn btn-primary"
+        >
+          Start Logging
+        </NuxtLink>
       </div>
     </div>
   </div>
