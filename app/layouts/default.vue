@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import NavBar from "~/components/nav-bar.vue";
+import { useAuthStore } from "~/stores/auth";
 
 const authStore = useAuthStore();
 await authStore.init();
